@@ -13,7 +13,7 @@ import DashboardPage from './pages/DashboardPage';
 function App() {
 
   const [page, setPage] = useState("home");
-  const [menuOptions, setMenuOptions] = useState([
+  const menuOptions  = [
     {
       name: "home",
       content: "Dashboard"
@@ -38,7 +38,7 @@ function App() {
       name: "log-out",
       content: "Log out"
     }
-  ]);
+  ] ;
 
   function renderContent() {
     switch (page) {

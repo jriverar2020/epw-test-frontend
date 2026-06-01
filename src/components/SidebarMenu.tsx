@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 type Props = {
     current: string;
     onChange: (page: string) => void;
