@@ -1,7 +1,7 @@
 type Props = {
     current: string;
     onChange: (page: string) => void;
-    menuOptions: [{ name: string, content: string }]
+    menuOptions: { name: string, content: string }[];
 };
 export default function SidebarMenu({ current, onChange, menuOptions }: Props) {
 
