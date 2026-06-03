@@ -1,4 +1,12 @@
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Tooltip, Legend } from "chart.js";
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Tooltip,
+    Legend,
+} from "chart.js";
+
 import { Bar } from "react-chartjs-2";
 
 ChartJS.register(
@@ -17,6 +25,7 @@ type Props = {
 };
 
 export default function SalesChart({ data }: Props) {
+
     const chartData = {
         labels: data.map((x) => x.month),
         datasets: [
@@ -42,6 +51,7 @@ export default function SalesChart({ data }: Props) {
             },
         ],
     };
+
     const options = {
         responsive: true,
         plugins: {
@@ -55,5 +65,6 @@ export default function SalesChart({ data }: Props) {
             },
         },
     };
+
     return <Bar data={chartData} options={options} />;
 }

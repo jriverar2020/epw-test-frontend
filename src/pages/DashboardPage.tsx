@@ -4,7 +4,8 @@ import ProductsChart from "../charts/ProductsChart";
 
 export default function DashboardPage() {
 
-    const { data, isLoading } = useDashboardSummary();
+    const { data, isLoading } =
+        useDashboardSummary();
 
     if (isLoading) {
         return <p>Cargando dashboard...</p>;
@@ -12,6 +13,7 @@ export default function DashboardPage() {
 
     return (
         <div className="space-y-6">
+
             <div>
                 <h1 className="text-3xl font-bold text-slate-800">
                     Dashboard
@@ -20,27 +22,34 @@ export default function DashboardPage() {
                     Indicadores simulados para análisis visual.
                 </p>
             </div>
+
             <div className="grid md:grid-cols-3 gap-4">
+
                 <div className="bg-blue-600 text-white rounded-xl p-4 shadow">
                     <p>Completed</p>
                     <h2 className="text-4xl font-bold">
                         {data?.completed}
                     </h2>
                 </div>
+
                 <div className="bg-amber-500 text-white rounded-xl p-4 shadow">
                     <p>Pending</p>
                     <h2 className="text-4xl font-bold">
                         {data?.pending}
                     </h2>
                 </div>
+
                 <div className="bg-rose-500 text-white rounded-xl p-4 shadow">
                     <p>Cancelled</p>
                     <h2 className="text-4xl font-bold">
                         {data?.cancelled}
                     </h2>
                 </div>
+
             </div>
+
             <div className="grid lg:grid-cols-2 gap-4">
+
                 <div className="bg-white rounded-xl border p-4 shadow-sm">
                     <h2 className="text-xl font-semibold mb-4">
                         Ventas mensuales
@@ -49,6 +58,7 @@ export default function DashboardPage() {
                         data={data?.monthlySales ?? []}
                     />
                 </div>
+
                 <div className="bg-white rounded-xl border p-4 shadow-sm">
                     <h2 className="text-xl font-semibold mb-4">
                         Productos más vendidos
@@ -57,7 +67,9 @@ export default function DashboardPage() {
                         data={data?.topProducts ?? []}
                     />
                 </div>
+
             </div>
+
         </div>
     );
 }

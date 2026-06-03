@@ -4,20 +4,16 @@ import './App.css'
 import CustomersPage from "./pages/CustomersPage";
 import DepartamentPage from "./pages/DepartamentPage";
 import TestMenuOptionPage from "./pages/TestMenuOptionPage";
+import DashboardPage from "./pages/DashboardPage";
 //Organizador de la interfaz
 import MainLayout from "./layouts/MainLayout";
 //Contenedor del menú
 import SidebarMenu from "./components/SidebarMenu";
-import DashboardPage from './pages/DashboardPage';
 
 function App() {
 
-  const [page, setPage] = useState("home");
-  const menuOptions  = [
-    {
-      name: "home",
-      content: "Dashboard"
-    },
+  const [page, setPage] = useState("customers");
+  const [menuOptions, setMenuOptions] = useState([
     {
       name: "customers",
       content: "Customers"
@@ -31,6 +27,10 @@ function App() {
       content: "TMO"
     },
     {
+      name: "db",
+      content: "Dashboard"
+    },
+    {
       name: "about",
       content: "About..."
     },
@@ -38,29 +38,29 @@ function App() {
       name: "log-out",
       content: "Log out"
     }
-  ] ;
+  ]);
 
   function renderContent() {
     switch (page) {
-      case "home":
-        return <DashboardPage />;
       case "customers":
         return <CustomersPage />;
       case "departments":
         return <DepartamentPage />;
       case "tmo":
         return <TestMenuOptionPage />;
-      default:
+      case "db":
         return <DashboardPage />;
+      default:
+        return <CustomersPage />;
     }
   }
 
   return (
     <MainLayout
-      sidebar={<SidebarMenu current={page}
-        onChange={setPage}
-        menuOptions={menuOptions} />}
-
+      sidebar={<SidebarMenu current={page} 
+      onChange={setPage} 
+      menuOptions={menuOptions} />}
+      
       content={renderContent()} />
   )
 }
