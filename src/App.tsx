@@ -38,7 +38,7 @@ function App() {
       name: "log-out",
       content: "Log out"
     }
-  ]);
+  ];
 
   function renderContent() {
     switch (page) {
