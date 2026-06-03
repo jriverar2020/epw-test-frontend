@@ -13,7 +13,7 @@ import SidebarMenu from "./components/SidebarMenu";
 function App() {
 
   const [page, setPage] = useState("customers");
-  const [menuOptions, setMenuOptions] = useState([
+  const menuOptions = [
     {
       name: "customers",
       content: "Customers"
@@ -57,10 +57,10 @@ function App() {
 
   return (
     <MainLayout
-      sidebar={<SidebarMenu current={page} 
-      onChange={setPage} 
-      menuOptions={menuOptions} />}
-      
+      sidebar={<SidebarMenu current={page}
+        onChange={setPage}
+        menuOptions={menuOptions} />}
+
       content={renderContent()} />
   )
 }
