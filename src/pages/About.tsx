@@ -1,6 +1,6 @@
 export default function AboutPage() {
     return (
-        <h1>Este es el componente acerca de...</h1>
+        <h1>Aplicación de prueba en el servidor de AWS...</h1>
     )
 
 }

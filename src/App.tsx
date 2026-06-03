@@ -3,6 +3,7 @@ import './App.css'
 //Contenido de la pagina
 import CustomersPage from "./pages/CustomersPage";
 import DepartamentPage from "./pages/DepartamentPage";
+import AboutPage from "./pages/About";
 import TestMenuOptionPage from "./pages/TestMenuOptionPage";
 import DashboardPage from "./pages/DashboardPage";
 //Organizador de la interfaz
@@ -50,6 +51,8 @@ function App() {
         return <TestMenuOptionPage />;
       case "db":
         return <DashboardPage />;
+	case "about":
+	return <AboutPage />;
       default:
         return <CustomersPage />;
     }
